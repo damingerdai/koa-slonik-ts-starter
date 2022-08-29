@@ -1,0 +1,18 @@
+{
+  "name": "koa-slonik-ts-starter",
+  "version": "0.0.0",
+  "description": "a template project based on koa and slonik",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "arthur ming",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "typescript": "^4.8.2"
+  }
+}
