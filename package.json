@@ -3,6 +3,8 @@
  "version": "0.0.0",
  "description": "a template project based on koa and slonik",
  "main": "server.js",
+ "author": "arthur ming",
+ "license": "MIT",
  "scripts": {
   "ts-node-dev": "node --max_old_space_size=4096 ./node_modules/.bin/ts-node-dev",
   "build": "tsc",
@@ -11,12 +13,13 @@
   "start:dev": "yarn ts-node-dev --require tsconfig-paths/register --require dotenv/config server.ts",
   "prepare": "is-ci || husky install"
  },
- "author": "arthur ming",
- "license": "MIT",
  "dependencies": {
   "@koa/router": "^12.0.0",
   "dotenv": "^16.0.3",
   "koa": "^2.13.4",
+  "koa-bodyparser": "^4.3.0",
+  "koa-compress": "^5.1.0",
+  "koa-morgan": "^1.0.1",
   "slonik": "^23.9.0",
   "slonik-interceptor-preset": "^1.2.10"
  },

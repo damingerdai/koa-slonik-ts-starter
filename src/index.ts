@@ -1,4 +1,5 @@
 import Koa from 'koa';
+import { middlewares } from './middlewares';
 import { router } from './routes';
 
 export const app = new Koa();
@@ -12,14 +13,7 @@ app.use(async (ctx, next) => {
 	ctx.set('X-Response-Time', `${ms}ms`);
 });
 
-// Logger
-app.use(async (ctx, next) => {
-	const start = Date.now();
-	// eslint-disable-next-line callback-return
-	await next();
-	const ms = Date.now() - start;
-	console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
-});
+middlewares.forEach(middleware => app.use(middleware));
 
 app.use(router.routes());
 app.use(router.allowedMethods());
