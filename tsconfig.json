@@ -16,6 +16,6 @@
   "noUnusedLocals": true,
   "resolveJsonModule": true
  },
- "include": ["src/**/*.ts", "index.ts", "test/**/*.ts"],
+ "include": ["src/**/*.ts", "server.ts", "test/**/*.ts"],
  "exclude": ["node_modules", "lib"]
 }
