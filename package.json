@@ -2,13 +2,13 @@
  "name": "koa-slonik-ts-starter",
  "version": "0.0.0",
  "description": "a template project based on koa and slonik",
- "main": "index.js",
+ "main": "server.js",
  "scripts": {
   "ts-node-dev": "node --max_old_space_size=4096 ./node_modules/.bin/ts-node-dev",
   "build": "tsc",
   "build:watch": "tsc --watch",
-  "start": "yarn run build && node --max_old_space_size=4096 index.js",
-  "start:dev": "yarn ts-node-dev --require tsconfig-paths/register --require dotenv/config index.ts",
+  "start": "yarn run build && node --max_old_space_size=4096 server.js",
+  "start:dev": "yarn ts-node-dev --require tsconfig-paths/register --require dotenv/config server.ts",
   "prepare": "is-ci || husky install"
  },
  "author": "arthur ming",
@@ -16,7 +16,9 @@
  "dependencies": {
   "@koa/router": "^12.0.0",
   "dotenv": "^16.0.3",
-  "koa": "^2.13.4"
+  "koa": "^2.13.4",
+  "slonik": "^23.9.0",
+  "slonik-interceptor-preset": "^1.2.10"
  },
  "devDependencies": {
   "@commitlint/cli": "^17.1.1",

@@ -1,7 +1,7 @@
 import Koa from 'koa';
-import { router } from './src/routes';
+import { router } from './routes';
 
-const app = new Koa();
+export const app = new Koa();
 
 // X-response-timer
 app.use(async (ctx, next) => {
@@ -18,12 +18,10 @@ app.use(async (ctx, next) => {
 	// eslint-disable-next-line callback-return
 	await next();
 	const ms = Date.now() - start;
-	console.log(`${ctx.method} ${ctx.url} - ${ms}`);
+	console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.use(ctx => (ctx.body = 'hello world'));
-
-app.listen(3000);
