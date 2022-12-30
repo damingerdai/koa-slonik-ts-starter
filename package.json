@@ -11,7 +11,9 @@
   "build:watch": "tsc --watch",
   "start": "yarn run build && node --max_old_space_size=4096 server.js",
   "start:dev": "yarn ts-node-dev --require tsconfig-paths/register --require dotenv/config server.ts",
-  "prepare": "is-ci || husky install"
+  "prepare": "is-ci || husky install",
+  "test": "jest --runInBand --detectOpenHandles --forceExit",
+  "test:ci": "jest --runInBand --detectOpenHandles --forceExit --coverage"
  },
  "dependencies": {
   "@koa/router": "^12.0.0",
@@ -26,6 +28,7 @@
  "devDependencies": {
   "@commitlint/cli": "^17.1.1",
   "@commitlint/config-conventional": "^17.1.0",
+  "@types/jest": "^29.2.4",
   "@types/koa": "^2.13.5",
   "@types/koa__router": "^12.0.0",
   "@typescript-eslint/eslint-plugin": "^5.35.1",
@@ -34,8 +37,10 @@
   "eslint-config-prettier": "^8.5.0",
   "husky": "^8.0.0",
   "is-ci": "^3.0.1",
+  "jest": "^29.3.1",
   "lint-staged": "^13.0.3",
   "prettier": "^2.7.1",
+  "ts-jest": "^29.0.3",
   "ts-node": "^10.9.1",
   "ts-node-dev": "^2.0.0",
   "tsconfig-paths": "^4.1.0",

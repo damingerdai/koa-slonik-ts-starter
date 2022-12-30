@@ -1,6 +1,6 @@
 {
  "compilerOptions": {
-  "target": "es2017",
+  "target": "ES2022",
   "lib": ["es6", "esnext", "dom"],
   "module": "commonjs",
   "moduleResolution": "node",
@@ -11,7 +11,7 @@
   "declaration": false,
   "outDir": "dist",
   "typeRoots": ["node_modules/@types"],
-  "types": ["node"],
+  "types": ["node", "jest"],
   "baseUrl": ".",
   "noUnusedLocals": true,
   "resolveJsonModule": true
