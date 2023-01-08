@@ -11,7 +11,7 @@ on:
       - 'database/**'
 
 jobs:
-  test:
+  db-migrate-test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
