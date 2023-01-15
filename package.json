@@ -13,7 +13,10 @@
   "start:dev": "yarn ts-node-dev --require tsconfig-paths/register --require dotenv/config server.ts",
   "prepare": "is-ci || husky install",
   "test": "jest --runInBand --detectOpenHandles --forceExit",
-  "test:ci": "jest --runInBand --detectOpenHandles --forceExit --coverage"
+  "test:ci": "jest --runInBand --detectOpenHandles --forceExit --coverage",
+  "migrate:new": "db-migrate create --sql-file --config database/database.json -m database/migrations",
+  "migrate:up": "db-migrate up --config database/database.json -m database/migrations",
+  "migrate:down": "db-migrate down --config database/database.json -m database/migrations"
  },
  "dependencies": {
   "@koa/router": "^12.0.0",
@@ -22,6 +25,7 @@
   "koa-bodyparser": "^4.3.0",
   "koa-compress": "^5.1.0",
   "koa-morgan": "^1.0.1",
+  "pg": "^8.8.0",
   "slonik": "^23.9.0",
   "slonik-interceptor-preset": "^1.2.10"
  },
@@ -33,6 +37,8 @@
   "@types/koa__router": "^12.0.0",
   "@typescript-eslint/eslint-plugin": "^5.35.1",
   "@typescript-eslint/parser": "^5.35.1",
+  "db-migrate": "^0.11.13",
+  "db-migrate-pg": "^1.2.2",
   "eslint": "^8.23.0",
   "eslint-config-prettier": "^8.5.0",
   "husky": "^8.0.0",
