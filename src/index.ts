@@ -1,5 +1,6 @@
 import Koa from 'koa';
-import { middlewares } from './middlewares';
+import * as passport from 'koa-passport';
+import { initPassportMiddleware, middlewares } from './middlewares';
 import { router } from './routes';
 
 export const app = new Koa();
@@ -15,7 +16,9 @@ app.use(async (ctx, next) => {
 
 middlewares.forEach(middleware => app.use(middleware));
 
+app.use(passport.initialize());
+// App.use(passport.session());
+initPassportMiddleware();
+
 app.use(router.routes());
 app.use(router.allowedMethods());
-
-app.use(ctx => (ctx.body = 'hello world'));
