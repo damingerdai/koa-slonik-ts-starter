@@ -1,4 +1,4 @@
-FROM node:20.3.0-alpine3.18 as build
+FROM node:20.2.0-alpine3.18 as build
 
 ENV SELF_SIGNED_CERT_IN_CHAIN=true
 ENV NODE_TLS_REJECT_UNAUTHORIZED=0
@@ -19,7 +19,7 @@ WORKDIR /app
 RUN yarn run test:ci && yarn install --frozen-lockfile --non-interactive --production
 
 
-FROM node:20.3.0-alpine3.18 as release
+FROM node:20.2.0-alpine3.18 as release
 
 ENV SELF_SIGNED_CERT_IN_CHAIN=true
 ENV NODE_TLS_REJECT_UNAUTHORIZED=0
